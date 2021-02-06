@@ -49,5 +49,22 @@ def decrypt(encrypted, key):
             decrypted_text += ''
 
     return decrypted_text   
+    
+    # 3. Create a `crack` function that will decode the cipher so that an 
+    # encrypted message can be transformed into its original state WITHOUT 
+    # access to the key.
+    
+    # 4. Devise a method for the computer to determine if code was broken 
+    # with minimal human guidance.
+    
+    def crack(encrypted):
+    """ shifts encrypted input to plaintext when key is known outputs 
+    hacked = TRUE or FALSE when crack() is successful/fails"""
+        pass
+
         
+    
+
+
+
 # reference on ascii -- https://www.tutorialspoint.com/count-uppercase-lowercase-special-character-and-numeric-values-in-cplusplus#:~:text=Uppercase%20Letters%20%E2%88%92%20A%20%2D%20Z%20having,48%20and%2057%20are%20inclusive
