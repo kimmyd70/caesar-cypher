@@ -1,47 +1,46 @@
-# Caesar/Shift Cypher
+# Cryptography with Caesar (Shift) Cypher
 
-## PR for this file: 
+## PR for this file: https://github.com/kimmyd70/caesar-cypher/pull/1
 
-This is Lab 17 of 401-Python (seattle-py-401n2)
+This is Lab 18 of 401-Python (seattle-py-401n2)
 
 Developers: Kim Damalas
 
-Date: 3 February 2021
+Date: 6 February 2021
 ____________________
 ### Features
 
-1. Scrape a Wikipedia page and record which passages need citations.
-    - E.g. History of Mexico has 7 “citation needed” cases, as of this writing.
+1. Create an `encrypt` function that takes in a plain text phrase and a numeric shift.
+    - the phrase will then be shifted that many letters
+    - E.g. encrypt(‘abc’,1) would return ‘bcd’ = E.g. encrypt(‘abc’, 10) would return ‘klm’
 
-2. Your web scraper should report the number of citations needed
+    - shifts that exceed 26 should wrap around
+    - E.g. encrypt(‘abc’,27) would return ‘bcd’
 
-3. Your web scraper should identify those cases AND include the relevant passage.
+    - shifts that push a letter out or range should wrap around
+    - E.g. encrypt(‘zzz’,1) would return ‘aaa’
 
-    - E.g. Citation needed for “lorem spam and impsum eggs
+2. Create a `decrypt` function that takes in encrypted text and numeric shift which will restore the encrypted text back to its original form when correct key is supplied.
 
-    - Consider the “relevant passage” to be the parent element that contains the passage, often a paragraph element.
+3. Create a `crack` function that will decode the cipher so that an encrypted message can be transformed into its original state WITHOUT access to the key.
 
-4. Count function must be named `get_citations_needed_count`
-    - `get_citations_needed` takes in a url and returns an integer
-
-5. Report function must be named `get_citations_needed_report`
-    - `get_citations_needed_report` takes in a url and returns a string
-
-    - the string should be formatted with each citation needed on own line, in order found.
-
-6. Module must be named scraper.py
+4. Devise a method for the computer to determine if code was broken with minimal human guidance.
 __________
 
 ## Approach
 
-Approach is using data `requests` to the website and `beautifulsoup4 or bs4` to parse and filter data received from the site. User will need to add dependencies listed in import list (or .toml file) of scraper.py before running scraper.py
+Approach is using +/- shift keys and letter replacement.  Must have access to word library such as natural language tool kit (nltk)
 
 _____________
 ## Required User Acceptance Testing
 
-1. verify that correct count of citations needed is calculated
+1. encrypt a string with a given shift
+2. decrypt a previously encrypted string with the same shift
+3. encryption should handle upper and lower case letters (return w/case match)
+4. encryption should allow non-alpha characters but ignore them, including white space (return without giving away punctuation...ignore)
+5. decrypt encrypted version of "It was the best of times, it was the worst of times." WITHOUT knowing the shift used.
 
-2. verify that preceding passage
+
 
 
 _________________
