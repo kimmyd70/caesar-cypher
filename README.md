@@ -37,7 +37,7 @@ _____________
 1. encrypt a string with a given shift
 2. decrypt a previously encrypted string with the same shift
 3. encryption should handle upper and lower case letters (return w/case match)
-4. encryption should allow non-alpha characters but ignore them, including white space (return without giving away punctuation...ignore)
+4. encryption should allow non-alpha characters but ignore them, including white space (return same)
 5. decrypt encrypted version of "It was the best of times, it was the worst of times." WITHOUT knowing the shift used.
 
 
