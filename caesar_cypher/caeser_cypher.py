@@ -1,5 +1,5 @@
-# import nltk
-from nltk.corpus import words
+import nltk
+# from nltk.corpus import words
 
 # 1. Create an `encrypt` function that takes in a plain text phrase and a numeric shift.
 #     - the phrase will then be shifted that many letters
@@ -69,7 +69,7 @@ def decrypt(encrypted, key):
         hacked = True
         key = 0
         
-        nltk.download('words', quiet=True)
+        nltk.corpus.download('words', quiet=True)
         
         for key in range(26):
             plaintext += decrypt(encrypted, key)

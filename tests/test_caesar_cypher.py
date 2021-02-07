@@ -1,4 +1,5 @@
-from caesar_cypher.caeser_cypher import encrypt, decrypt, crack
+from caesar_cypher.caeser_cypher import encrypt, decrypt
+from caesar_cypher.caeser_cypher import crack
 
 import pytest
 
