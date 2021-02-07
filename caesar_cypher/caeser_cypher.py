@@ -82,7 +82,7 @@ def decrypt(encrypted, key):
             else:
                 hacked = False
             
-            return(f'Hacking key: {key} gives {plaintext}. Did I do it right?? {hacked}')
+        return(f'Hacking key: {key} gives {plaintext}. Did I do it right?? {hacked}')
 
         
 # reference on ascii -- https://www.tutorialspoint.com/count-uppercase-lowercase-special-character-and-numeric-values-in-cplusplus#:~:text=Uppercase%20Letters%20%E2%88%92%20A%20%2D%20Z%20having,48%20and%2057%20are%20inclusive

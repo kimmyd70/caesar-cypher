@@ -1,4 +1,5 @@
 from caesar_cypher.caeser_cypher import encrypt, decrypt, crack
+
 import pytest
 
 # Passes all -- 1. encrypt a string with a given shift
@@ -85,7 +86,7 @@ def test_encrypt_sentence():
 # 5. decrypt encrypted version of "It was the best of times, it was the worst 
 # of times." WITHOUT knowing the shift used.
 
-@pytest.mark.skip("pending")
+# @pytest.mark.skip("pending")
 def test_crack_sentence_no_key():
     actual = crack('Yj mqi jxu ruij ev jycui, yj mqi jxu mehij ev jycui.')
     expected = 'Hacking key:  gives It was the best of times, it was the worst of times. Did I do it right?? True'
