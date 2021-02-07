@@ -32,6 +32,13 @@ def test_encrypt_same():
     actual = encrypt('abc', 26)
     expected = 'abc'
     assert actual == expected
+    
+@pytest.mark.skip("pending")
+def test_encrypt_sentence():
+    actual = encrypt('It was the best of times, it was the worst of times.', 16)
+    expected = 'Yj mqi jxu ruij ev jycui, yj mqi jxu mehij ev jycui.'
+    assert actual == expected
+
 
 # Passes all -- 2. decrypt a previously encrypted string with the same shift
 
@@ -63,4 +70,10 @@ def test_decrypt_mixed():
 def test_decrypt_same():
     actual = decrypt('abc', 26)
     expected = 'abc'
+    assert actual == expected
+
+@pytest.mark.skip("pending")
+def test_decrypt_sentence():
+    actual = decrypt('Yj mqi jxu ruij ev jycui, yj mqi jxu mehij ev jycui.', 16)
+    expected = 'It was the best of times, it was the worst of times.'
     assert actual == expected

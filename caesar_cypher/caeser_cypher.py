@@ -21,7 +21,7 @@ def encrypt(plain, key):
             convert = (ord(char)+ key - 65) %26 + 65
             encrypted_text += chr(convert)
         else:
-            encrypted_text += ''
+            encrypted_text += char
 
     return encrypted_text   
     
@@ -46,7 +46,7 @@ def decrypt(encrypted, key):
             convert = (ord(char) - key - 65) %26 + 65
             decrypted_text += chr(convert)
         else:
-            decrypted_text += ''
+            decrypted_text += char
 
     return decrypted_text   
     
@@ -58,8 +58,11 @@ def decrypt(encrypted, key):
     # with minimal human guidance.
     
     def crack(encrypted):
-    """ shifts encrypted input to plaintext when key is known outputs 
-    hacked = TRUE or FALSE when crack() is successful/fails"""
+        """ Shifts an encrypted message into its original state WITHOUT access to the key.
+        hacked = True or False when crack() is successful/fails"""
+        
+        string = 'It was the best of times, it was the worst of times.'
+        hacked = True
         pass
 
         
