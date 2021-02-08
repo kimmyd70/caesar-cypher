@@ -1,5 +1,7 @@
-import nltk
+# import nltk
 # from nltk.corpus import words
+
+import enchant
 
 # 1. Create an `encrypt` function that takes in a plain text phrase and a numeric shift.
 #     - the phrase will then be shifted that many letters
@@ -58,31 +60,44 @@ def decrypt(encrypted, key):
     # 4. Devise a method for the computer to determine if code was broken 
     # with minimal human guidance.
     
-    def crack(encrypted):
-        """ Shifts an encrypted message into its original state WITHOUT access to the key.
-        hacked = True or False when crack() is successful/fails"""
+def crack(encrypted):
+    """ Shifts an encrypted message into its original state WITHOUT access to the key.
+    hacked = True or False when crack() is successful/fails"""
+    
+    # plaintext = 'It was the best of times, it was the worst of times.'
+    # encrypted = 'Yj mqi jxu ruij ev jycui, yj mqi jxu mehij ev jycui.'
+    
+    plaintext = ''
+    hacked = True
+    key = 0
+    
+    # word_list = nltk.corpus.download('words', quiet=True)
+    word_list = enchant.Dict("en_US")
+    
+    
+    for key in range(26):
+        plaintext += decrypt(encrypted, key)
         
-        # plaintext = 'It was the best of times, it was the worst of times.'
-        # encrypted = 'Yj mqi jxu ruij ev jycui, yj mqi jxu mehij ev jycui.'
-        
-        plaintext = ''
-        hacked = True
-        key = 0
-        
-        nltk.corpus.download('words', quiet=True)
-        
-        for key in range(26):
-            plaintext += decrypt(encrypted, key)
-            word_list = plaintext.words(plaintext)
-            
 
-        for word in range(word_list):
-            if word in word_list:
+        for word in plaintext:
+            if word_list.check(word):
                 hacked = True
             else:
                 hacked = False
-            
-        return(f'Hacking key: {key} gives {plaintext}. Did I do it right?? {hacked}')
+        
+    return(f'Hacking key: {key} gives {plaintext}. Did I do it right?? {hacked}')
 
         
 # reference on ascii -- https://www.tutorialspoint.com/count-uppercase-lowercase-special-character-and-numeric-values-in-cplusplus#:~:text=Uppercase%20Letters%20%E2%88%92%20A%20%2D%20Z%20having,48%20and%2057%20are%20inclusive
+
+# Roger's nltk code didn't work in class nor here, so I used enchant instead
+# reference: https://stackoverflow.com/questions/3788870/how-to-check-if-a-word-is-an-english-word-with-python
+
+# >>> import enchant
+# >>> d = enchant.Dict("en_US")
+# >>> d.check("Hello")
+# True
+# >>> d.check("Helo")
+# False
+# >>> d.suggest("Helo")
+# ['He lo', 'He-lo', 'Hello', 'Helot', 'Help', 'Halo', 'Hell', 'Held', 'Helm', 'Hero', "He'll"]

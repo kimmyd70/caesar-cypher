@@ -151,6 +151,14 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [[package]]
+name = "pyenchant"
+version = "3.2.0"
+description = "Python bindings for the Enchant spellchecking system"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[[package]]
 name = "pyparsing"
 version = "2.4.7"
 description = "Python parsing module"
@@ -235,7 +243,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "ef9d444d54495deec8f866f2b053e311aee55a8dcf63f68a7097c56f9b488038"
+content-hash = "41ff4f01db56cb56cb312f67baf58c0553d36d2049bfb4ae3c3e7f16386f2f42"
 
 [metadata.files]
 appdirs = [
@@ -291,6 +299,12 @@ pluggy = [
 py = [
     {file = "py-1.10.0-py2.py3-none-any.whl", hash = "sha256:3b80836aa6d1feeaa108e046da6423ab8f6ceda6468545ae8d02d9d58d18818a"},
     {file = "py-1.10.0.tar.gz", hash = "sha256:21b81bda15b66ef5e1a777a21c4dcd9c20ad3efd0b3f817e7a809035269e1bd3"},
+]
+pyenchant = [
+    {file = "pyenchant-3.2.0-py3-none-any.whl", hash = "sha256:5f5fbf99283136ad0e56660343ec4f16713981e340984ce9487de756fce022c6"},
+    {file = "pyenchant-3.2.0-py3-none-win32.whl", hash = "sha256:f649f36fa90cb950d10b1a70bca50be7799ec759aa478353f08dcef579c097ee"},
+    {file = "pyenchant-3.2.0-py3-none-win_amd64.whl", hash = "sha256:f22cc6e342d4e6a027296c59ae8ad4d5b2f281da1ecbe0e839a9e5f5d243b33d"},
+    {file = "pyenchant-3.2.0.tar.gz", hash = "sha256:6b97e9a9f132fa7c9029a6635d821ccad67d4980e68186d02c765b4256b6f152"},
 ]
 pyparsing = [
     {file = "pyparsing-2.4.7-py2.py3-none-any.whl", hash = "sha256:ef9d7589ef3c200abe66653d3f1ab1033c3c419ae9b9bdb1240a85b024efc88b"},
